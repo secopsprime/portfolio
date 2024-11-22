@@ -1,0 +1,745 @@
+/* 
+   Template Name: {{ #  }}
+    Template URL: {{ # }}
+    Description: {{ # }}
+    Author: DesignToCodes
+    Author URL: https://www.designtocodes.com
+    Text Domain: {{ CSume }}
+*/
+
+:root {
+
+  /* Global Color */
+  --primary_color: #2CD97B;
+  --secondary_color: #091D42;
+  --text_color: #6B778E;
+  --text_color_one: #EAFBF2;
+  --default_color_one: #ffffff;
+  --border_radius: 2px;
+
+  /* global google font */
+  --primary_font: 'Inter', sans-serif;
+ 
+}
+
+/*Typography
+-----------------------*/
+p{
+  font-family: var(--primary_font);
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--text_color);
+  margin-bottom: 16px;
+}
+h1,h2,h3,h4,h5,h6{
+  color: var(--secondary_color);
+  font-family: var(--primary_font);
+  margin-bottom: 16px;
+  text-transform: capitalize;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 24px;
+}
+h4{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/*Preloader*/
+#preloader {
+  background-color: var(--secondary_color);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 1100;
+}
+#preloader > img {
+  width: 92px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 50%);
+}
+
+/*Custom Style
+-----------------------*/
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+}
+.container{
+  max-width: 1110px;
+}
+::selection {
+  background: var(--primary_color);
+  color: var(--default_color_one);
+}
+/* [class *="col-"]{
+  padding: 10px;
+} */
+#scrollToTopBtn{
+  display: none;
+}
+a,
+button,
+select,
+input {
+  color: var(--text_color);
+  cursor: pointer;
+  transition: 0.4s all;
+}
+a:focus,
+button:focus,
+select:focus,
+input:focus,
+label:focus {
+  outline: 0;
+}
+a {
+  text-decoration: none;
+  color: var(--text_color);
+  font-family: var(--primary_font);
+  font-weight: 400;
+}
+a:hover {
+  text-decoration: none;
+  color: var(--primary_color);
+}
+section {
+  padding: 100px 0px;
+}
+li{
+  font-size: 17px;
+  font-weight: 400;
+  font-family: var(--primary_font);
+  color: var(--text_color);
+  list-style-type: none;
+}
+.d2c_header{
+  margin-bottom: 20px;
+}
+
+
+/* navbar */
+.navbar-brand{
+  width: 86px;
+}
+.d2c_navbar{
+  background: var(--secondary_color);
+  box-shadow: 0px 0px 25px rgba(64, 18, 128, 0.05);
+  padding: 10px 0px;
+}
+.d2c_navbar .navbar-nav .nav-link,.d2c_footer_nav .nav-link{
+  color: var(--default_color_one);
+  font-family: var(--primary_font);
+  font-weight: 600;
+  font-size: 17px;
+  transition: .4s all ease;
+  padding: 10px 15px;
+  text-transform: capitalize;
+}
+.d2c_navbar .navbar-nav .nav-link:hover{
+  color: var(--primary_color);
+  transition: .4s all ease;
+}
+.d2c_navbar .navbar-nav .nav-item .d2c_btn{
+  margin-left: 20px;
+  font-size: 14px;
+  padding: 7px 18px;
+  text-transform: capitalize;
+  color: var(--primary_color);
+}
+.d2c_navbar .navbar-nav .nav-item .d2c_btn:hover{
+  color: var(--default_color_one);
+  background: var(--primary_color);
+  border-color: var(--primary_color);
+}
+/* Nav Item Show from Side */
+body .d2c_mobile_view {
+  position: fixed;
+  height: 100vh;
+  inset: 0;
+  opacity: 1;
+}
+.navbar.d2c_mobile_view_body .navbar-nav {
+  width: 100%;
+}
+.navbar.d2c_mobile_view_body .nav-item {
+  margin-right: 0;
+}
+.d2c_mobile_view .show_width {
+  max-width: 15.625rem;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  right: -380px;
+  top: 0;
+  transition: 0.5s;
+  padding: 20px 15px;
+  background-color: #102958;
+  overflow: scroll;
+  z-index: 9999;
+}
+
+.d2c_mobile_view.show .show_width {
+  right: 0;
+  transition: 0.5s;
+}
+.d2c_mobile_view .navbar-toggler {
+  background: var(--primary_color);
+  color: var(--secondary_color);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+@media only screen and (min-width:991px) {
+  body .d2c_mobile_view {
+    opacity: 0;
+    transition: .5s;
+  }
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
+  color: var(--primary_color);
+}
+.navbar-nav .d2c_btn_invert.active:hover{
+  color: var(--secondary_color) !important;
+}
+.navbar-nav .d2c_btn.active{
+  border-color: var(--primary_color) !important;
+  color: var(--default_color_one) !important;
+  background: var(--primary_color) !important ;
+}
+.navbar-toggler{
+  background: var(--primary_color);
+}
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+.navbar-toggler i{
+  font-size: 20px;
+
+}
+.d2c_navbar .d2c_btn.active{
+  background: var(--primary_color);
+  color: var(--secondary_color);
+}
+.navbar .d2c_btn{
+  font-weight: 600;
+}
+.d2c_navbar .d2c_btn:hover{
+  color: var(--secondary_color);
+  
+ .social-links {
+  display: flex; /* Arrange icons horizontally */
+  justify-content: flex-end; /* Align to the right */
+  margin-top: 20px; /* Adjust vertical spacing */
+}
+
+.social-icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Make icons round */
+  background-color: #f0f0f0; /* Background color */
+  color: #333; /* Icon color */
+  text-align: center;
+  line-height: 40px; /* Center vertically */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+}
+/* navbar end */
+
+/* ========================== hero section start ============================ */
+.d2c_hero{
+  background-color: var(--secondary_color);
+  background-image: url(../images/hero_bg.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 0px;
+}
+.d2c_hero_content{
+  padding:10px 10px 10px 0px;
+}
+.d2c_hero_content h4{
+  color: var(--default_color_one);
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 3.8px;
+}
+.d2c_hero_content .d2c_title{
+  font-size: 52px;
+  color: var(--primary_color);
+}
+.d2c_hero_content .d2c_subtitle{
+  color: var(--default_color_one);
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  margin-bottom: 25px;
+}
+.d2c_hero_content .d2c_hero_paragraph{
+  color: var(--text_color_one);
+}
+.d2c_hero_content .d2c_btn{
+  margin-top: 20px;
+}
+.d2c_hero_right{
+  background-image: url(../images/hero_image_bg.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  padding-top: 140px;
+}
+
+/* ========================== hero section end ============================ */
+
+/* ========================== about section start ============================ */
+.d2c_about{
+  background-image: url(../images/about_bg.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+.d2c_about_left_column{
+  padding-right: 100px;
+}
+.d2c_about_left{
+  position: relative;
+  padding: 20px 20px 0px 0px;
+  background: var(--default_color_one);
+  border-top-right-radius: 50px;
+  border-right: 2px solid rgba(58, 74, 104, 0.1);
+  border-top: 2px solid rgba(58, 74, 104, 0.1);
+}
+.d2c_about_left .d2c_image_wrapper{
+  position: relative;
+  background: #EAFBF2;
+  padding: 20px 20px 0px 20px;
+  border-top-right-radius: 50px;
+}
+.d2c_about_left .d2c_about_profile_image{
+  border-top-right-radius: 50px;
+}
+.d2c_about_left .d2c_gradient{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, rgb(44 217 123 / 38%) 207.2%);
+  border-top-right-radius: 50px;
+}
+.d2c_about_left .d2c_experience{
+  background: var(--secondary_color);
+  padding: 20px 30px;
+  width: 48%;
+  position: absolute;
+  bottom: 0px;
+  right: -50px;
+}
+.d2c_experience h3{
+  color: var(--primary_color);
+  font-weight: 700;
+  font-weight: 900;
+  font-size: 52px;
+  margin-bottom: 5px;
+}
+.d2c_experience p{
+  font-size: 22px;
+  color: #D0D0D0 !important;
+  text-transform: uppercase;
+}
+.d2c_about_key_points{
+  padding-left: 30px;
+  padding-top: 25px;
+  padding-bottom: 5px;
+  position: relative;
+}
+.d2c_about_key_points h3::before{
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: var(--primary_color);
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.d2c_about_key_points::before{
+  content: '';
+  width: 2px;
+  height: 100px;
+  background: #C0F4D7;
+  border-radius: 50%;
+  position: absolute;
+  left: 7px;
+  top: 35px;
+  height: 100%;
+}
+.d2c_about_key_points:last-child::before{
+  display: none;
+}
+.d2c_about_left::before{
+  content: url(../images/dotted_image_1.png);
+  position: absolute;
+  top: 0px;
+  left: -100px;
+}
+.d2c_about_left::after{
+  content: url(../images/dotted_image_2.png);
+  position: absolute;
+  bottom: 0px;
+  left: -100px;
+}
+
+/* ========================== about section end ============================ */
+
+/* ========================== services section start ============================ */
+.d2c_services{
+  background-image: url(../images/services_circuit_left.png),url(../images/services_circuit_right.png);
+  background-repeat: no-repeat,no-repeat;
+  background-position: top left,top right;
+  padding-top: 0px;
+}
+.d2c_services_card{
+  background: #black;
+  box-shadow: 0px 0px 28px rgba(45, 45, 45, 0.08);
+  border-radius: var(--border_radius);
+  padding: 60px 15px 30px 15px;
+  cursor: pointer;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+.d2c_icon_image{
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.d2c_services_card h4{
+  margin-bottom: 10px;
+}
+.d2c_services .d2c_header{
+  margin-bottom: 70px;
+}
+/* ========================== services section end ============================ */
+
+/* ========================== counter section start ============================ */
+.d2c_counter{
+  background: linear-gradient(0deg, rgb(9 29 66 / 96%), rgb(9 29 66 / 95%)),url(../images/counter_bg.png);
+  background-position: center;
+  background-size: cover;
+}
+.d2c_icon{
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border_radius);
+  color: var(--primary_color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+  font-size: 32px;
+}
+.d2c_counter_content h3{
+  color: var(--default_color_one);
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 52px;
+}
+.d2c_counter_content p{
+  text-transform: uppercase;
+  color: var(--primary_color);
+  font-size: 20px;
+  font-weight: 700;
+}
+/* ========================== counter section end ============================ */
+
+
+
+/* ========================== features section start ============================ */
+.d2c_features{
+  background: var(--secondary_color);
+}
+.d2c_features .d2c_title{
+  color: var(--default_color_one);
+  font-weight: 300;
+  margin-top: 20px;
+  font-size: 52px;
+  text-transform: capitalize;
+}
+.d2c_features .d2c_title span{
+  color: var(--primary_color);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.d2c_features_content_column{
+  z-index: 999;
+}
+.d2c_features_content p{
+  color: var(--text_color_one);
+}
+.d2c_features_content .d2c_btn{
+  margin-top: 15px;
+}
+#particles-js{
+  position: relative;
+  overflow: hidden;
+  
+}
+.particles-js-canvas-el{
+  height: auto;
+  position: absolute;
+  inset: 0;
+  opacity: .1;
+}
+/* ========================== features section end ============================ */
+
+/* ========================== gallery section start ============================ */
+.d2c_portfolio{
+  background-image: url(../images/circuit.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.d2c_gallery_image_wrapper{
+  overflow: hidden;
+}
+.d2c_gallery_image_wrapper img{
+  object-fit: cover;
+  border-radius: var(--border_radius);
+  box-shadow: 0px 0px 28px rgba(44, 217, 123, 0.07);
+}
+.d2c_gallery_column{
+  padding: 10px;
+}
+.d2c_gallery_content{
+  display: block;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(9, 29, 66, 0.96), rgba(9, 29, 66, 0.96));
+  border-radius: var(--border_radius);
+  transition: .4s all ease;
+  padding: 35px 25px;
+  top: 100%;
+  bottom: 0px;
+  right: 0px;
+  left:0px;
+  opacity: 0;
+}
+.d2c_gallery_content h4,.d2c_gallery_content h5{
+  color: var(--default_color_one);
+}
+.d2c_gallery_content h4{
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.d2c_gallery_content h5{
+  font-size: 18px;
+  margin-bottom: 8px;
+  margin-top: 25px;
+}
+.d2c_gallery_content li i{
+  width: 12px;
+  height: 12px;
+  background: var(--default_color_one);
+  border-radius: var(--border_radius);
+  color: var(--secondary_color);
+  font-size: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.d2c_gallery_content li,.d2c_gallery_content p{
+  color: var(--text_color_one);
+}
+.d2c_gallery_image_wrapper:hover .d2c_gallery_content {
+  opacity: 1;
+  top: 0px;
+  transition: .4s all ease;
+}
+/* ========================== gallery section start ============================ */
+
+
+.d2c_awards {
+    background-color: black; /* Light background for contrast */
+    padding: 50px 0; /* Vertical padding */
+}
+
+.d2c_header {
+    margin-bottom: 40px; /* Spacing below the title */
+}
+
+.d2c_title {
+    font-size: 2.5em; /* Title size */
+    color: #4CAF50; /* Green color for the title */
+    font-weight: bold; /* Bold title */
+}
+
+.d2c_awards_card {
+    background: #fff; /* White background for cards */
+    padding: 20px; /* Padding inside cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+    margin-bottom: 30px; /* Space between cards */
+}
+
+.d2c_awards_card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.d2c_awards_card h3 {
+    color: #333; /* Darker color for headings */
+    font-size: 1.5em; /* Heading size */
+}
+
+.year {
+    color: #888; /* Grey color for year */
+    font-style: italic; /* Italics for emphasis */
+}
+
+
+
+/* ==========footer section start========== */
+.d2c_footer{
+  background: linear-gradient(0deg, rgba(9, 29, 66, 0.96), rgba(9, 29, 66, 0.96)),url(../images/footer_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 80px 0px 0px 0px;
+}
+.d2c_footer_content p,.d2c_footer_content li a,.d2c_footer_content p a{
+  color: var(--default_color_one);
+}
+.d2c_footer_content h3{
+  color: var(--primary_color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.d2c_footer hr{
+  border-color: rgb(41 67 114);
+}
+.d2c_footer_content li{
+  list-style-type: unset;
+}
+.d2c_footer_content li::marker{
+  color: var(--default_color_one);
+}
+.d2c_footer .d2c_footer_logo{
+  margin-bottom: 20px;
+  width: 125px;
+}
+.d2c_footer_content ul{
+  padding-left: 17px;
+}
+.d2c_footer_content hr{
+  border: 1px solid var(--primary_color);
+  width: 60px;
+  margin: 0px auto 20px 0px;
+  opacity: 1;
+}
+.d2c_footer_content i{
+  width: 26px;
+  height: 26px;
+  border-radius: var(--border_radius);
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-right: 5px;
+  transition: .4s all ease;
+}
+.d2c_footer_content i:hover{
+  background: var(--primary_color);
+  transition: .4s all ease;
+}
+.d2c_social_link a{
+  color: var(--default_color_one);
+}
+.d2c_footer_2 ul li{
+  margin-bottom: 10px;
+}
+.d2c_footer_2 ul li:last-child{
+  margin-bottom: 0px;
+}
+.d2c_footer_1{
+  padding-right: 80px;
+}
+.d2c_contact_img_up_gradient{
+  z-index: 999;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
+}
+.d2c_copyright{
+  padding: 15px 0px;
+}
+.d2c_copyright p{
+  color: var(--default_color_one);
+}
+.d2c_copyright p a{
+  color: var(--primary_color);
+  font-weight: 600;
+}
+/* ==========footer section end========== */
+
+/* ========================== bottom to top scroll start ============================ */
+#scrollToTopBtn a{
+  text-decoration: none;
+}
+#scrollToTopBtn a i{
+  background: var(--primary_color);
+  box-shadow: 0rem 0rem 1.25rem rgb(0 0 0 / 15%);
+  font-size: 1.25rem;
+  color: var(--default_color_one);
+  border-radius: 0.25rem;
+  width: 2.188rem;
+  height: 2.188rem;
+  position: fixed;
+  z-index: 9999;
+  bottom: 3%;
+  right: 5%;
+  transition: 0.4s all ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary_color);
+}
+#scrollToTopBtn a i:hover{
+  background: transparent;
+  border-color: var(--primary_color);
+  color: var(--primary_color);
+  transition: 0.4s all ease;
+}
+
+/* ========================== bottom to top scroll end ============================ */
+
+/* 
+   Template Name: {{ #  }}
+    Template URL: {{ # }}
+    Description: {{ # }}
+    Author: DesignToCodes
+    Author URL: https://www.designtocodes.com
+    Text Domain: {{ CSume }}
+*/
+
+
+
